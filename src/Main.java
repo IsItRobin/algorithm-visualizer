@@ -16,6 +16,9 @@ public class Main {
         Color fade = new Color(0,0,0,70);
 
 
+
+
+//        ------------------------User Name ------------------------
         JLabel label = new JLabel();
 
         label.setText("Robin puri");
@@ -24,13 +27,18 @@ public class Main {
         label.setBounds(90,40,167,55);
 
 
+        //        ------------------------Dashboard ------------------------
+
+
         JLabel dash = new JLabel();
-        dash.setText("Dashborad");
+        dash.setText("Dashboard");
         dash.setHorizontalTextPosition(JLabel.CENTER);
         dash.setVerticalAlignment(JLabel.TOP);
         dash.setBounds(90,52,167,55);
 
 
+
+//        ------------------------Today date------------------------
         JLabel date = new JLabel();
 //        calling date function
         LocalDate today = LocalDate.now();
@@ -38,20 +46,22 @@ public class Main {
 //        calling date formater
         DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd");
         String todaydate = today.format(formater);
+//        showing date
         date.setText(" "+ todaydate);
+//        alignment of text hori and vertically
         date.setHorizontalTextPosition(JLabel.CENTER);
         date.setVerticalAlignment(JLabel.TOP);
+//        as we have set frame layout null so we need to adjust the layout
         date.setBounds(40,130,167,55);
         date.setFont(font);
 
 
 
-
+//        ------------------------Today day-----------------------
 
 
 
         JLabel day = new JLabel();
-//        calling date function
         LocalDate todayday = LocalDate.now();
 
 //        calling date formater
@@ -63,7 +73,7 @@ public class Main {
         day.setVerticalAlignment(JLabel.BOTTOM);
         day.setBounds(80,80,70,70);
 
-
+//        ------------------------Today  months------------------------
 
         JLabel Month = new JLabel();
 
@@ -75,7 +85,7 @@ public class Main {
         Month.setVerticalAlignment(JLabel.BOTTOM);
         Month.setBounds(80,90,70, 70);
 
-
+//        ------------------------side text------------------------
         JLabel Help = new JLabel();
         Help.setText("HEY, NEED ANY HELP ?");
         Help.setHorizontalTextPosition(JLabel.RIGHT);
