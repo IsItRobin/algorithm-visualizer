@@ -1,10 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class Main {
@@ -67,42 +70,46 @@ public class Main {
         // ------------------------ J-panel today date side -------------------------------------
         JPanel top = new JPanel();
         top.setBounds(0, 85, 360, 86);
-        top.setBackground(new Color(202, 0, 255, 255));
+        top.setBackground(new Color(195, 0, 248, 255));
         top.setLayout(null);  // Manual positioning within top
         frame.add(top);
 
-        //        ------------------------Today date------------------------
+// ------------------------ Circular Button with Date ------------------------
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd");
+        String day = currentDate.format(formatter);
 
-        JLabel date = new JLabel("Today date");
-        date.setBounds(70, 20, 180, 43);
-        top.add(date);  // Add date label to top
+        // Create the circular button with today's day
+        CircleButton dateButton = new CircleButton(day);
+        dateButton.setBounds(10, 15, 50, 50);  // Set button size and position
+        top.add(dateButton);  // Add circular button to top panel
 
 
+        // ------------------------ Day_of_month ------------------------
+        JLabel day_of_month = new JLabel("Mon,");
+        day_of_month.setBounds(70, 10, 170, 55);
+        top.add(day_of_month);  // Add Dashboard label to userarea
 
 
+        // ------------------------ Month_of_year ------------------------
+        JLabel Month_of_yearr = new JLabel("September");
+        Month_of_yearr.setBounds(70, 20, 170, 55);
+        top.add(Month_of_yearr);  // Add Dashboard label to userarea
 
-
-//        JLabel date = new JLabel();
-////        calling date function
-//        SimpleDateFormat formatter= new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-//        Date todaydate = new Date();
-////        showing date
-//        String d =formatter.format(date);
-//
-//
-//        System.out.println();
-//        date.setText(" "+ d);
-////        alignment of text hori and vertically
-//        date.setHorizontalTextPosition(JLabel.CENTER);
-//        date.setVerticalAlignment(JLabel.TOP);
-////        as we have set frame layout null so we need to adjust the layout
-//        date.setBounds(40,130,167,55);
-//        date.setFont(font);
-//
+        // ------------------------ Button to open new window ------------------------
 
 
 
-//        ------------------------Today day-----------------------
+        MyButton openWindowButton = new MyButton("show my task", 10);
+        // 10 is the radius for the corners
+        openWindowButton.setBounds(200, 30, 120, 30);
+        // Set button size and position
+        openWindowButton.setBackground(new Color(255, 100, 73, 255));
+        // Set background color
+        openWindowButton.setFocusable(false);
+        openWindowButton.setForeground(Color.WHITE); // Set text color
+        top.add(openWindowButton);
+
 
 
 //
@@ -132,6 +139,17 @@ public class Main {
 //        Month.setHorizontalTextPosition(JLabel.CENTER);
 //        Month.setVerticalAlignment(JLabel.BOTTOM);
 //        Month.setBounds(80,90,70, 70);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
